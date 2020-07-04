@@ -16,6 +16,12 @@
           <tbody>
 
             <tr>
+              <td> {{ nombre2 }} </td>
+              <th><small> capitalizado: true </small></th>
+              <td> {{ nombre2 | capitalizado: true }} </td>
+            </tr>
+
+            <tr>
               <td> {{ nombre }} </td>
               <th><small> uppercase </small></th>
               <td> {{ nombre | uppercase }} </td>
@@ -128,6 +134,19 @@
               <td> {{ fecha | date:'MMMM - dd':'': idioma }} </td>
             </tr>
 
+            <tr>
+              <td> {{ nombre }} </td>
+              <th>
+                <small> contraseña: {{ activar }} </small>
+                <br>
+                <button (click)="activar = !activar" 
+                        class="btn btn-outline-secondary">
+                  Activar/Desactivar
+                </button>
+              </th>
+              <td> {{ nombre | contrasena: activar }} </td>
+            </tr>
+
 
           </tbody>
         </table>
@@ -162,4 +181,19 @@
     </div>
     <br>
 
+  </div>
+
+  <h3 class="mt-4">Domseguro</h3>
+  <hr>
+  <div class="row mb-5">
+    <div class="col">
+     
+      <iframe width="560" 
+              height="315" 
+              [src]="videoUrl | domseguro"  
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </div>
   </div>
